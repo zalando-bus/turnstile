@@ -37,7 +37,7 @@ def codevalidator(files_to_check, temporary_dir=None, custom_config=None, fix=Fa
 
     logger.debug('Command Arguments: %s', arguments)
 
-    process = subprocess.Popen(arguments, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    process = subprocess.Popen(arguments, stdout=subprocess.PIPE, stderr=subprocess.PIPE, universal_newlines=True)
     stdout, stderr = process.communicate()
     logger.debug('Standard Output: %s', stdout)
     logger.debug('Standard Error: %s', stderr)
